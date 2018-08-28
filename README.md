@@ -33,3 +33,8 @@ SQL query debugging:
 > export SQL_DEBUG=1
 > npm start
 ```
+
+Tests
+-----
+
+> npm test
