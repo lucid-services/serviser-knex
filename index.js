@@ -1,9 +1,12 @@
-const _          = require('lodash');
-const path       = require('path');
-const Knex       = require('knex');
-const semver     = require('semver');
+const _           = require('lodash');
+const path        = require('path');
+const Knex        = require('knex');
+const KnexBuilder = require('knex/lib/query/builder');
+const semver      = require('semver');
 
 module.exports = knexBuilder;
+
+KnexBuilder.prototype.inspectIntegrity = inspectIntegrity;
 
 const debug = getDebugStrategy();
 
@@ -131,7 +134,7 @@ function getDebugStrategy() {
  * @return {Promise<Boolean>}
  */
 function inspectIntegrity() {
-    const dialect = this.knex.client.dialect;
+    const dialect = this.client.dialect;
     let q = void 0;
 
     switch (dialect) {
@@ -147,7 +150,7 @@ function inspectIntegrity() {
             throw new Error('Integrity check - unsupported dialect');
     }
 
-    return this.knex.raw(q).bind(this).then(function (result) {
+    return this.client.raw(q).bind(this).then(function (result) {
         var requiredVer = this.minServerVersion;
         var currentVer = result.rows[0]['server_version'];
 
