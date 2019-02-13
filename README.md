@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/BohemiaInteractive/bi-service-knex.svg?branch=master)](https://travis-ci.org/BohemiaInteractive/bi-service-knex) [![npm version](https://badge.fury.io/js/bi-service-knex.svg)](https://www.npmjs.com/package/bi-service-knex)  
+[![Build Status](https://travis-ci.org/lucid-services/bi-service-knex.svg?branch=master)](https://travis-ci.org/lucid-services/bi-service-knex) [![npm version](https://badge.fury.io/js/bi-service-knex.svg)](https://www.npmjs.com/package/bi-service-knex)  
 
-[bi-service](https://github.com/BohemiaInteractive/bi-service) plugin which integrates [Knex](https://github.com/tgriesser/knex)
+[bi-service](https://github.com/lucid-services/bi-service) plugin which integrates [Knex](https://github.com/tgriesser/knex)
 
 ```javascript
 const Service = require('bi-service');
