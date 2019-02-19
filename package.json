@@ -1,6 +1,6 @@
 {
     "name": "bi-service-knex",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "integrates knex SQL query builder with bi-service based projects",
     "main": "index.js",
     "scripts": {

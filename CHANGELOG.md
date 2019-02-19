@@ -1,4 +1,4 @@
-## FUTURE
+## 1.0.2
 
 * [FIXED] `inspectIntegrity` - failure because of invalid sql query result evaulation when mysql driver was used
 
