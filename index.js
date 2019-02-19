@@ -152,7 +152,20 @@ function inspectIntegrity() {
 
     return this.client.raw(q).bind(this).then(function (result) {
         var requiredVer = this.minServerVersion;
-        var currentVer = result.rows[0]['server_version'];
+        var currentVer;
+
+        //we dont know the result collection structure as it can differ based
+        //on which nodejs database driver is used
+        //performance will not be an issue here
+        _.cloneDeepWith(result, function(v, k) {
+            if(k === 'server_version') {
+                currentVer = v;
+            }
+
+            if (currentVer) {//stop cloning
+                return null;
+            }
+        });
 
         if (   requiredVer
             && semver.valid(requiredVer)

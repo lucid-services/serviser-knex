@@ -1,3 +1,7 @@
+## 1.0.2
+
+* [FIXED] `inspectIntegrity` - failure because of invalid sql query result evaulation when mysql driver was used
+
 ## 1.0.1
 
 * [FIXED] `inspectIntegrity` is accesible on query builder objects as well as on knex instance
