@@ -1,11 +1,11 @@
-[![Build Status](https://travis-ci.org/lucid-services/bi-service-knex.svg?branch=master)](https://travis-ci.org/lucid-services/bi-service-knex) [![npm version](https://badge.fury.io/js/bi-service-knex.svg)](https://www.npmjs.com/package/bi-service-knex)  
+[![Build Status](https://travis-ci.org/lucid-services/serviser-knex.svg?branch=master)](https://travis-ci.org/lucid-services/serviser-knex) [![npm version](https://badge.fury.io/js/serviser-knex.svg)](https://www.npmjs.com/package/serviser-knex)  
 
-[bi-service](https://github.com/lucid-services/bi-service) plugin which integrates [Knex](https://github.com/tgriesser/knex)
+[serviser](https://github.com/lucid-services/serviser) plugin which integrates [Knex](https://github.com/tgriesser/knex)
 
 ```javascript
-const Service = require('bi-service');
-const config = require('bi-config');
-const knexBuilder = require('bi-service-knex');
+const Service = require('serviser');
+const config = require('serviser-config');
+const knexBuilder = require('serviser-knex');
 
 const knex = knexBuilder({/*knex options*/});
 

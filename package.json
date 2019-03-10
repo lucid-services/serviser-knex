@@ -1,7 +1,7 @@
 {
-    "name": "bi-service-knex",
-    "version": "1.0.2",
-    "description": "integrates knex SQL query builder with bi-service based projects",
+    "name": "serviser-knex",
+    "version": "1.0.3",
+    "description": "integrates knex SQL query builder with serviser based projects",
     "main": "index.js",
     "scripts": {
         "coverage": "export NODE_ENV=test; istanbul cover node_modules/mocha/bin/_mocha -- --recursive --ui tdd -R spec tests",
@@ -12,10 +12,10 @@
         "knex",
         "query-builder",
         "sql",
-        "bi-service",
+        "serviser",
         "service"
     ],
-    "author": "Bohemia Interactive",
+    "author": "fogine",
     "private": false,
     "license": "GPL-3.0",
     "files": [
@@ -24,7 +24,7 @@
         "index.js"
     ],
     "peerDependencies": {
-        "bi-service": "^1.0.0"
+        "serviser": "^1.0.0"
     },
     "dependencies": {
         "knex": "^0.16.3",

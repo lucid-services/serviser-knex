@@ -1,3 +1,7 @@
+## 1.0.3
+
+* [CHANGED] renamed project
+
 ## 1.0.2
 
 * [FIXED] `inspectIntegrity` - failure because of invalid sql query result evaulation when mysql driver was used
