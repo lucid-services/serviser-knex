@@ -5,7 +5,7 @@ const chai       = require('chai');
 const sinonChai  = require("sinon-chai");
 const Knex       = require('knex');
 const KnexRunner = require('knex/lib/runner');
-const Promise    = require('bluebird');
+const KnexClient = require('knex/lib/client');
 
 var knexBuilder = require('../index.js');
 
@@ -17,7 +17,11 @@ chai.should();
 describe('knexBuilder', function() {
     before(function() {
         this.runner = sinon.stub(KnexRunner.prototype, 'query');
-        this.ensureConnection = sinon.stub(KnexRunner.prototype, 'ensureConnection').resolves({});
+        this.client = sinon.stub(KnexClient.prototype, 'runner').callsFake(function(builder) {
+            let runner = new KnexRunner(this, builder);
+            runner.connection = {};
+            return runner;
+        });
     });
 
     beforeEach(function() {
@@ -26,7 +30,7 @@ describe('knexBuilder', function() {
 
     after(function() {
         this.runner.restore();
-        this.ensureConnection.restore();
+        this.client.restore();
     });
 
     it('should return new Knex object', function() {
@@ -54,8 +58,7 @@ describe('knexBuilder', function() {
             dialect: 'postgres',
             pool: {
                 min: 10,
-                max: 100,
-                idle: 10
+                max: 100
             }
         };
 

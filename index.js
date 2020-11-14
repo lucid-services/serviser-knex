@@ -21,7 +21,6 @@ const debug = getDebugStrategy();
  * @param {Integer}  options.connection.port
  * @param {Integer}  options.pool.max
  * @param {Integer}  options.pool.min
- * @param {Integer}  options.pool.idle
  * @param {Integer}  options.dialect - a non-standard alias for `options.client`
  * @param {String}   options.client - mysql|pg|postgres|postgresql|sqlite3|sqlite|mariadb|mariasql|maria ^
  * @param {String}   [options.version] - version string in semver format
@@ -34,8 +33,7 @@ function knexBuilder(options) {
     var defaults = {
         pool: {
             max: 10,
-            min: 0,
-            idle: 10000
+            min: 0
         },
         debug: debug
     };
@@ -134,6 +132,7 @@ function getDebugStrategy() {
  * @return {Promise<Boolean>}
  */
 function inspectIntegrity() {
+    const self = this;
     const dialect = this.client.dialect;
     let q = void 0;
 
@@ -150,8 +149,8 @@ function inspectIntegrity() {
             throw new Error('Integrity check - unsupported dialect');
     }
 
-    return this.client.raw(q).bind(this).then(function (result) {
-        var requiredVer = this.minServerVersion;
+    return this.client.raw(q).then(function (result) {
+        var requiredVer = self.minServerVersion;
         var currentVer;
 
         //we dont know the result collection structure as it can differ based

@@ -1,3 +1,7 @@
+## 2.0.0
+
+* [CHANGED] updated knex@0.21.9
+
 ## 1.0.3
 
 * [CHANGED] renamed project
