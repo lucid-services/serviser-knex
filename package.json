@@ -27,6 +27,7 @@
         "serviser": "^1.0.0"
     },
     "dependencies": {
+        "bluebird": "^3.7.2",
         "knex": "^0.21.9",
         "lodash": "^4.16.2",
         "semver": "^5.1.0"

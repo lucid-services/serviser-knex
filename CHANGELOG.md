@@ -1,3 +1,7 @@
+## FUTURE
+
+* [FIXED] KnexBuilder.prototype.inspectIntegrity should return bluebird's Promise instance explicitly because of its extra methods
+
 ## 2.0.0
 
 * [CHANGED] updated knex@0.21.9
