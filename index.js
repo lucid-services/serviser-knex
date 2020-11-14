@@ -3,10 +3,12 @@ const path        = require('path');
 const Knex        = require('knex');
 const KnexBuilder = require('knex/lib/query/builder');
 const semver      = require('semver');
+const Promise     = require('bluebird');
 
 module.exports = knexBuilder;
 
-KnexBuilder.prototype.inspectIntegrity = inspectIntegrity;
+//Promise.method is needed for returned Promise object to be a bluebird instance
+KnexBuilder.prototype.inspectIntegrity = Promise.method(inspectIntegrity);
 
 const debug = getDebugStrategy();
 

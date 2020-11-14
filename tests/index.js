@@ -114,5 +114,9 @@ describe('knexBuilder', function() {
                 expect(result).to.be.equal(true);
             });
         });
+
+        it('should return bluebirds promise instance', function() {
+            return this.knex('users').inspectIntegrity().reflect.should.be.a.function;
+        });
     });
 });
