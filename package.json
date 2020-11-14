@@ -1,6 +1,6 @@
 {
     "name": "serviser-knex",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "description": "integrates knex SQL query builder with serviser based projects",
     "main": "index.js",
     "scripts": {
