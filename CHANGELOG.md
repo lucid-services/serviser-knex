@@ -1,3 +1,7 @@
+## 3.0.1
+
+* [FIXED] broken release, knex lib file has changed
+
 ## 3.0.0
 
 * [CHANGED] upgrade knex to v1.x.x
