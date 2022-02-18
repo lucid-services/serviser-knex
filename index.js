@@ -1,7 +1,7 @@
 const _           = require('lodash');
 const path        = require('path');
 const Knex        = require('knex');
-const KnexBuilder = require('knex/lib/query/builder');
+const KnexBuilder = require('knex/lib/query/querybuilder');
 const semver      = require('semver');
 const Promise     = require('bluebird');
 
